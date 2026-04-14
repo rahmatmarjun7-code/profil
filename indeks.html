@@ -1,1 +1,292 @@
-https://script.google.com/macros/s/AKfycbwSEugT5goRWwW4CdhDCV7a1ZFPIUmHtMIMHhj-KiWUoR3GCZ-GmYLhAML6aQdqTGWv/exec
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal PTSP KUA Marisa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .green-gradient { background: linear-gradient(135deg, #166534 0%, #15803d 100%); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <!-- Header -->
+    <header class="green-gradient text-white p-6 shadow-lg text-center">
+        <h1 class="text-3xl font-bold uppercase tracking-wider">PTSP Online KUA Marisa</h1>
+        <p class="text-sm opacity-90 mt-2">Pelayanan Terpadu Satu Pintu - Kementerian Agama Kab. Pohuwato</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b sticky top-0 z-50 overflow-x-auto">
+        <div class="flex justify-center whitespace-nowrap p-2 space-x-4">
+            <button onclick="showTab('beranda')" class="nav-btn px-4 py-2 font-semibold text-green-700 hover:bg-green-100 rounded-lg">Beranda</button>
+            <button onclick="showTab('pegawai')" class="nav-btn px-4 py-2 font-semibold text-green-700 hover:bg-green-100 rounded-lg">Data Pegawai</button>
+            <button onclick="showTab('nikah')" class="nav-btn px-4 py-2 font-semibold text-green-700 hover:bg-green-100 rounded-lg">Layanan Nikah</button>
+            <button onclick="showTab('keagamaan')" class="nav-btn px-4 py-2 font-semibold text-green-700 hover:bg-green-100 rounded-lg">Data Keagamaan</button>
+            <button onclick="showTab('pengumuman')" class="nav-btn px-4 py-2 font-semibold text-green-700 hover:bg-green-100 rounded-lg">Pengumuman</button>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-8">
+
+        <!-- Beranda -->
+        <section id="beranda" class="tab-content active text-center">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-green-100">
+                <i class="fas fa-mosque text-6xl text-green-600 mb-4"></i>
+                <h2 class="text-2xl font-bold text-gray-800">Selamat Datang di Portal KUA Marisa</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Melayani masyarakat dengan sepenuh hati, transparan, dan akuntabel melalui transformasi layanan digital.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+                    <div class="p-6 bg-green-50 rounded-xl border border-green-200">
+                        <h3 class="font-bold text-green-800">Visi</h3>
+                        <p class="text-sm text-gray-700 italic">"Terwujudnya masyarakat Marisa yang taat beragama, rukun, cerdas, dan sejahtera."</p>
+                    </div>
+                    <div class="p-6 bg-green-50 rounded-xl border border-green-200">
+                        <h3 class="font-bold text-green-800">Misi</h3>
+                        <p class="text-sm text-gray-700">Meningkatkan kualitas pelayanan nikah, wakaf, dan pembinaan keagamaan.</p>
+                    </div>
+                    <div class="p-6 bg-green-50 rounded-xl border border-green-200">
+                        <h3 class="font-bold text-green-800">Integritas</h3>
+                        <p class="text-sm text-gray-700">KUA Marisa Berkomitmen mewujudkan Wilayah Bebas dari Korupsi (WBK).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Pegawai -->
+        <section id="pegawai" class="tab-content">
+            <h2 class="text-2xl font-bold text-green-800 mb-6 flex items-center">
+                <i class="fas fa-users-cog mr-2"></i> Struktur Organisasi & Pegawai
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="pegawaiList">
+                <!-- Data will be populated here -->
+            </div>
+        </section>
+
+        <!-- Layanan Nikah -->
+        <section id="nikah" class="tab-content">
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-green-100">
+                <div class="green-gradient p-6 text-white">
+                    <h2 class="text-xl font-bold">Layanan Pendaftaran Nikah</h2>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-green-700 border-b-2 border-green-200 pb-2 mb-4">Persyaratan Berkas (Manual/Online)</h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Surat pengantar RT/RW domisili</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i>N1 - Surat Pengantar Nikah (Kelurahan/Desa)</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i>N2 - Permohonan Kehendak Nikah</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i>N4 - Surat Persetujuan Mempelai</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Fotokopi KTP, KK & Akta Lahir (Catin & Wali)</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Foto 2x3 (4 lbr) & 4x6 (1 lbr) Latar Biru</li>
+                                <li><i class="fas fa-info-circle text-amber-500 mr-2"></i>N5 - Izin Orang Tua (jika < 21 thn)</li>
+                                <li><i class="fas fa-info-circle text-amber-500 mr-2"></i>Akta Cerai / N6 (Kematian) bagi Duda/Janda</li>
+                                <li><i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>Dispensasi Pengadilan (jika < 19 thn)</li>
+                            </ul>
+                            
+                            <div class="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                                <h4 class="font-bold text-amber-800">Biaya Layanan</h4>
+                                <p class="text-sm">🏠 Nikah di Kantor KUA: <strong>Rp 0,- (GRATIS)</strong></p>
+                                <p class="text-sm">🚗 Nikah Luar Kantor: <strong>Rp 600.000,-</strong> (Setor ke Bank/Kas Negara)</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold text-lg text-green-700 border-b-2 border-green-200 pb-2 mb-4">Prosedur Pendaftaran</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg border">
+                                    <h4 class="font-bold text-sm uppercase text-gray-500 mb-2">Pendaftaran Online (SIMKAH)</h4>
+                                    <ol class="text-xs space-y-2 list-decimal ml-4">
+                                        <li>Akses <strong>simkah4.kemenag.go.id</strong></li>
+                                        <li>Buat akun menggunakan Email & verifikasi OTP</li>
+                                        <li>Klik menu <strong>Daftar Nikah</strong> di Dashboard</li>
+                                        <li>Pilih lokasi & waktu pelaksanaan</li>
+                                        <li>Input data Catin, Wali, & Orang Tua</li>
+                                        <li>Upload dokumen & foto latar biru</li>
+                                        <li>Cetak bukti pendaftaran untuk dibawa ke KUA</li>
+                                    </ol>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+                                    <h4 class="font-bold text-sm uppercase text-green-600 mb-2">Pendaftaran Offline</h4>
+                                    <p class="text-xs">Datang langsung ke Kantor KUA Marisa membawa seluruh berkas fisik untuk pemeriksaan oleh Penghulu.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Keagamaan -->
+        <section id="keagamaan" class="tab-content">
+            <h2 class="text-2xl font-bold text-green-800 mb-6 flex items-center">
+                <i class="fas fa-database mr-2"></i> Pendataan Keagamaan
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <button onclick="openForm('Masjid/Mushola')" class="card-hover bg-white p-6 rounded-xl border border-green-100 flex flex-col items-center text-center shadow-sm">
+                    <i class="fas fa-home text-green-600 text-3xl mb-2"></i>
+                    <span class="text-sm font-bold">Masjid/Mushola</span>
+                </button>
+                <button onclick="openForm('Tanah Wakaf')" class="card-hover bg-white p-6 rounded-xl border border-green-100 flex flex-col items-center text-center shadow-sm">
+                    <i class="fas fa-map-marked-alt text-green-600 text-3xl mb-2"></i>
+                    <span class="text-sm font-bold">Tanah Wakaf</span>
+                </button>
+                <button onclick="openForm('Produk Halal')" class="card-hover bg-white p-6 rounded-xl border border-green-100 flex flex-col items-center text-center shadow-sm">
+                    <i class="fas fa-certificate text-green-600 text-3xl mb-2"></i>
+                    <span class="text-sm font-bold">Produk Halal</span>
+                </button>
+                <button onclick="openForm('Ukur Kiblat')" class="card-hover bg-white p-6 rounded-xl border border-green-100 flex flex-col items-center text-center shadow-sm">
+                    <i class="fas fa-compass text-green-600 text-3xl mb-2"></i>
+                    <span class="text-sm font-bold">Ukur Kiblat</span>
+                </button>
+                <button onclick="openForm('Lembaga TPQ')" class="card-hover bg-white p-6 rounded-xl border border-green-100 flex flex-col items-center text-center shadow-sm">
+                    <i class="fas fa-book-reader text-green-600 text-3xl mb-2"></i>
+                    <span class="text-sm font-bold">TPQ</span>
+                </button>
+                <button onclick="openForm('Pondok Pesantren')" class="card-hover bg-white p-6 rounded-xl border border-green-100 flex flex-col items-center text-center shadow-sm">
+                    <i class="fas fa-university text-green-600 text-3xl mb-2"></i>
+                    <span class="text-sm font-bold">Pondok Pesantren</span>
+                </button>
+                <button onclick="openForm('Kaum Rois')" class="card-hover bg-white p-6 rounded-xl border border-green-100 flex flex-col items-center text-center shadow-sm">
+                    <i class="fas fa-user-tie text-green-600 text-3xl mb-2"></i>
+                    <span class="text-sm font-bold">Kaum Rois</span>
+                </button>
+                <button onclick="openForm('Majelis Taklim')" class="card-hover bg-white p-6 rounded-xl border border-green-100 flex flex-col items-center text-center shadow-sm">
+                    <i class="fas fa-users text-green-600 text-3xl mb-2"></i>
+                    <span class="text-sm font-bold">Majelis Taklim</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Form Modal (Integrated) -->
+        <section id="formSection" class="tab-content">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-green-600 max-w-lg mx-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-green-800" id="formTitle">Formulir Data</h2>
+                    <button onclick="showTab('keagamaan')" class="text-gray-400 hover:text-red-500"><i class="fas fa-times"></i></button>
+                </div>
+                <form id="submissionForm" class="space-y-4">
+                    <input type="hidden" id="dataType" name="dataType">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Nama / Judul Objek</label>
+                        <input type="text" name="nama" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Keterangan / Alamat</label>
+                        <textarea name="keterangan" rows="3" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="w-full green-gradient text-white font-bold py-3 rounded-lg hover:opacity-90 transition shadow-md">
+                        KIRIM DATA
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Pengumuman -->
+        <section id="pengumuman" class="tab-content">
+            <div class="space-y-4">
+                <div class="bg-white p-4 border-l-4 border-green-600 rounded-r-lg shadow-sm">
+                    <span class="text-xs font-bold text-green-600">Terbaru</span>
+                    <h3 class="font-bold">Pengumuman Pelaksanaan Isbat Nikah Terpadu</h3>
+                    <p class="text-sm text-gray-600 mt-1">Diberitahukan kepada seluruh masyarakat Marisa bahwa pendaftaran Isbat Nikah dibuka hingga akhir bulan ini.</p>
+                </div>
+                <div class="bg-white p-4 border-l-4 border-gray-300 rounded-r-lg shadow-sm">
+                    <h3 class="font-bold">Layanan Libur Idul Fitri</h3>
+                    <p class="text-sm text-gray-600 mt-1">Layanan kantor tutup sementara sesuai kalender cuti bersama pemerintah.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-12 text-center p-8 bg-gray-100 text-gray-500 text-sm">
+        <p>&copy; 2024 KUA MARISA. Pelayanan Berkualitas, Masyarakat Puas.</p>
+    </footer>
+
+    <script>
+        const pegawaiData = [
+            { nama: "ABDULLAH HASANUDIN,S.FIL.I", jabatan: "Penghulu Muda / Kepala KUA", status: "Aktif" },
+            { nama: "Asis, S. Ag.", jabatan: "Penyuluh Agama Muda", status: "Aktif" },
+            { nama: "RAMDHAN PODUNGGE", jabatan: "Penghulu Pertama", status: "Aktif" },
+            { nama: "SELVI MOHA, S.Pd", jabatan: "Penata Layanan Operasional", status: "Aktif" },
+            { nama: "Rahmat Pasisingi", jabatan: "Penyuluh Agama Islam", status: "Aktif" },
+            { nama: "ARSAD HASAN, S.H", jabatan: "Penghulu", status: "Aktif" },
+            { nama: "RAHMAT MARJUN, S.Pd", jabatan: "Penata Layanan Operasional", status: "Aktif" },
+            { nama: "WISNO PAKAYA, S.Pd", jabatan: "Penata Layanan Operasional", status: "Aktif" },
+            { nama: "SURIYATI K.RIVAI", jabatan: "Operator Layanan Operasional", status: "Aktif" },
+            { nama: "Zubaida Ahmad", jabatan: "Operator Layanan Operasional", status: "Aktif" }
+        ];
+
+        function initPegawai() {
+            const list = document.getElementById('pegawaiList');
+            list.innerHTML = pegawaiData.map(p => `
+                <div class="bg-white p-4 rounded-xl border border-green-100 shadow-sm flex items-start space-x-4 card-hover">
+                    <div class="bg-green-100 p-3 rounded-full text-green-600">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">${p.nama}</h4>
+                        <p class="text-xs text-gray-500">${p.jabatan}</p>
+                        <span class="inline-block mt-2 px-2 py-0.5 bg-green-100 text-green-700 text-[10px] rounded-full font-bold">${p.status}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function openForm(type) {
+            document.getElementById('formTitle').innerText = "Input Data " + type;
+            document.getElementById('dataType').value = type;
+            showTab('formSection');
+        }
+
+        document.getElementById('submissionForm').onsubmit = function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Mengirim...';
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+            const data = {
+                type: formData.get('dataType'),
+                nama: formData.get('nama'),
+                keterangan: formData.get('keterangan'),
+                timestamp: new Date().toLocaleString()
+            };
+
+            // Simulating Apps Script Call
+            if(typeof google !== 'undefined' && google.script) {
+                google.script.run
+                    .withSuccessHandler(() => {
+                        alert('Data berhasil disimpan ke database (Spreadsheet)!');
+                        this.reset();
+                        btn.innerHTML = 'KIRIM DATA';
+                        btn.disabled = false;
+                        showTab('keagamaan');
+                    })
+                    .saveData(data);
+            } else {
+                setTimeout(() => {
+                    console.log('Saved locally:', data);
+                    alert('Data Tersimpan! (Simulasi: Hubungkan ke Google Apps Script untuk permanen)');
+                    this.reset();
+                    btn.innerHTML = 'KIRIM DATA';
+                    btn.disabled = false;
+                    showTab('keagamaan');
+                }, 1500);
+            }
+        };
+
+        window.onload = initPegawai;
+    </script>
+</body>
+</html>
